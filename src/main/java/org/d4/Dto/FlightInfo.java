@@ -1,15 +1,19 @@
-package org.d4;
-
-import java.util.HashSet;
-import java.util.Set;
+package org.d4.Dto;
 
 public class FlightInfo {
     public String id;
-    public Set<Float> ecnnopyPrices = new HashSet<>();
-    public Set<Float> comfortPrices = new HashSet<>();
-    public Set<Float> BuissnessPrices = new HashSet<>();
+    public double economyPrice;
+    public double comfortPrice;
+    public double businessPrice;
 
-    FlightInfo(String id) {
+    public FlightInfo(String id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "{ flight_id = " + id + "; ePrice = " + (economyPrice != 0 ? economyPrice : "No") + "; cPrice = " +
+                (comfortPrice != 0 ? comfortPrice : "No") + "; bPrice = " +
+                (businessPrice != 0 ? businessPrice : "No") + "}";
     }
 }
